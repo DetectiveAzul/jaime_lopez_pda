@@ -5,6 +5,13 @@ window.onload = function(){
   var updateView = function() {
     var runningTotal = document.querySelector('#running_total');
     runningTotal.value = calculator.runningTotal;
+    showError();
+  };
+
+  var showError = function() {
+    var runningTotal = document.querySelector('#running_total');
+    if (runningTotal.value == 'Infinity') { runningTotal.value = 'Error: INFINITY';
+    };
   };
 
   //bind number clicks to number buttons
@@ -32,7 +39,7 @@ window.onload = function(){
     calculator.clearClick();
     updateView();
   };
-  
+
 
 
 }

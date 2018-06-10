@@ -140,6 +140,16 @@ describe('calculator', function () {
     assert.equal(actual, expected);
   });
 
+  it('it should give infinity when dividing by 0', function() {
+    calculator.numberClick(10);
+    calculator.operatorClick('/');
+    calculator.numberClick(0);
+    calculator.operatorClick('=');
+    const actual = calculator.runningTotal;
+    const expected = Infinity;
+    assert.equal(actual, expected);
+  });
+
 
 
 
